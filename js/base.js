@@ -13,7 +13,10 @@ export class API extends BaseAPI {
         this.password = kwargs.password === undefined ? this.password : kwargs.password;
 
         if (this.username && this.password) {
-            this.baseUrlAuth = this.baseUrl.replace("https://", `https://${username}:${password}`);
+            this.baseUrlAuth = this.baseUrl.replace(
+                "https://",
+                `https://${this.username}:${this.password}`
+            );
         } else {
             this.baseUrlAuth = this.baseUrl;
         }
@@ -24,7 +27,7 @@ export class API extends BaseAPI {
     }
 
     async getResource(path) {
-        const url = this.baseUrlAuth + resource;
+        const url = this.baseUrlAuth + path;
         const contents = await this.get(url);
         return contents;
     }
