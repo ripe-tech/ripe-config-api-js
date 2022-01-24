@@ -15,7 +15,7 @@ export class API extends BaseAPI {
         if (this.username && this.password) {
             this.baseUrlAuth = this.baseUrl.replace(
                 "https://",
-                `https://${this.username}:${this.password}`
+                `https://${this.username}:${this.password}@`
             );
         } else {
             this.baseUrlAuth = this.baseUrl;
