@@ -5,9 +5,9 @@ Simple Javascript API client for RIPE Config.
 ## Example
 
 ```javascript
-import { API } from "ripe-config";
-await API.load();
-const api = new API();
+import { API as ConfigAPI } from "ripe-config";
+await ConfigAPI.load();
+const api = new ConfigAPI({ username: "YOUR_USERNAME", password: "YOUR_PASSWORD" });
 console.info(await api.getResource("info.json"));
 ```
 
