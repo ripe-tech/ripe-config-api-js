@@ -7,7 +7,10 @@ Simple Javascript API client for RIPE Config.
 ```javascript
 import { API as ConfigAPI } from "ripe-config";
 await ConfigAPI.load();
-const api = new ConfigAPI({ username: "YOUR_USERNAME", password: "YOUR_PASSWORD" });
+const api = new ConfigAPI({
+    username: "YOUR_USERNAME",
+    password: "YOUR_PASSWORD"
+});
 console.info(await api.getResource("info.json"));
 ```
 
