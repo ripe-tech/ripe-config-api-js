@@ -1,12 +1,8 @@
-import { API as BaseAPI, mix, load, conf } from "yonius";
-import { AccountAPI } from "./account";
-import { RoleAPI } from "./role";
-import { SecretAPI } from "./secret";
-import { TokenAPI } from "./token";
+import { API as BaseAPI, load, conf } from "yonius";
 
 const RIPE_CONFIG_BASE_URL = "https://config.platforme.com/";
 
-export class API extends mix(BaseAPI).with(AccountAPI, RoleAPI, SecretAPI, TokenAPI) {
+export class API extends BaseAPI {
     constructor(kwargs = {}) {
         super(kwargs);
         this.baseUrl = conf("RIPE_CONFIG_BASE_URL", RIPE_CONFIG_BASE_URL);
